@@ -6,7 +6,12 @@ class MyTodo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: ListView(
-      children: [Text('abc'), Text('def'), Text('ghi'), Text('jkl')],
+      children: [
+        Card(child: Text('abc')),
+        Card(child: Text('jef')),
+        Card(child: Text('ghi')),
+        Card(child: Text('jkl'))
+      ],
     ));
   }
 }
