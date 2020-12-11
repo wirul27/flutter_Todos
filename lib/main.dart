@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
                 Tab(child: Text('Stats')),
               ],
             ),
-            title: Text('Todos'),
+            title: Text('Flutter Todos'),
           ),
         ),
       ),
