@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class MyStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [Text('Complete: ...'), Text('Active Todo: ...')],
+    return new Center(
+      child: Column(
+        children: [Text('Complete: ...'), Text('Active Todo: ...')],
+      ),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_todos/todo.dart';
+import 'package:flutter_todos/data/todo.dart';
 
 part 'todo_event.dart';
 part 'todo_state.dart';

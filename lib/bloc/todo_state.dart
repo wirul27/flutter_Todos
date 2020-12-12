@@ -9,9 +9,9 @@ abstract class TodoState extends Equatable {
 
 class TodoInitial extends TodoState {}
 
-class TodosSuccess extends TodoState {
-  List<Todo> todos;
-  TodosSuccess(this.todos);
+class TodosLoadSuccess extends TodoState {
+  final List<Todo> todos;
+  TodosLoadSuccess(this.todos);
   @override
   List<Object> get props => [todos];
 }

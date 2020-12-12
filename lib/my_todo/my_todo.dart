@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyTodo extends StatefulWidget {
   @override
@@ -7,16 +8,33 @@ class MyTodo extends StatefulWidget {
 
 class _MyTodo extends State<MyTodo> {
   Map<String, dynamic> _cardTodos = {
-    "count": 3,
+    "count": 5,
     "todos": [
       {
-        "id": 1,
+        "id": "1srg",
         "note": "Angular is good.",
         "task": "Angular",
         "complet": false
       },
-      {"id": 2, "note": "I like youtube.", "task": "Youtube", "complet": false},
-      {"id": 3, "note": "I use facebook", "task": "Facebook", "complet": false}
+      {
+        "id": "2",
+        "note": "I like youtube.",
+        "task": "Youtube",
+        "complet": false
+      },
+      {
+        "id": "3adeg",
+        "note": "I use facebook",
+        "task": "Facebook",
+        "complet": false
+      },
+      {
+        "id": "1",
+        "note": "Angular is good.",
+        "task": "Angular",
+        "complet": false
+      },
+      {"id": "3", "note": "123", "task": "Facebook", "complet": false}
     ],
   };
 
@@ -36,18 +54,26 @@ class _MyTodo extends State<MyTodo> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
+    return Scaffold(
+      body: (ListView.builder(
           itemCount: _cardTodos['count'],
-          itemBuilder: (BuildContext context, int index) {
-            return CheckboxListTile(
-              value: _todos.contains(_cardTodos['todos'][index]['id']),
-              onChanged: (bool selected) {
-                _onCategorySelected(selected, _cardTodos['todos'][index]['id']);
-              },
-              title: Text(_cardTodos['todos'][index]['note']),
+          itemBuilder: (BuildContext context, int i) {
+            return Dismissible(
+              key: ValueKey(_cardTodos['todos']),
+              child: CheckboxListTile(
+                value: _todos.contains(_cardTodos['todos'][i]['id']),
+                onChanged: (bool selected) {
+                  _onCategorySelected(selected, _cardTodos['todos'][i]['id']);
+                },
+                title: Text(_cardTodos['todos'][i]['note']),
+              ),
             );
-          }),
+          })),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => BlocProvider(create: null),
+        tooltip: 'Add Todo',
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
